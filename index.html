@@ -1,35 +1,153 @@
-<!-- TODO 1: Create the HTML Boilerplate -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il mio Portfolio</title>
+    <title>Elenco dei Locali a Milano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        #filters {
+            margin: 1rem;
+            text-align: center;
+        }
+
+        #locali-list {
+            margin: 1rem;
+        }
+
+        #locali {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #locali li {
+            background-color: white;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Davide Motta Portfolio</h1>
-    <h2>Sono uno sviluppatore</h2>
-    <hr/>
-    <h3><a href="./public/movie-ranking.html">I miei ristoranti preferiti</a></h3>
-    <img src="./public/ristoranti.png" height="200" alt="Il sito dei miei locali preferiti">
-    <h3><a href="./public/birthday-invite.html">Il mio compleanno</a></h3>
-    <img src="./public/birthday.png" height="200" alt="Il sito del mio compleanno">
-    <hr/>
-    <a href="./public/contact.html">Contattami</a>
-    <a href="./public/about.html">Su di me</a>
+    <header>
+        <h1>Elenco dei Locali a Milano</h1>
+        <input type="text" id="search" placeholder="Cerca un locale...">
+    </header>
+    <main>
+        <section id="filters">
+            <h2>Filtri</h2>
+            <select id="tipologia-filter">
+                <option value="all">Tutte le Tipologie</option>
+                <option value="Aperitivo">Aperitivo</option>
+                <option value="Cena">Cena</option>
+                <!-- Aggiungi altre opzioni -->
+            </select>
+            <select id="zona-filter">
+                <option value="all">Tutte le Zone</option>
+                <option value="Arco">Arco</option>
+                <option value="Cadorna">Cadorna</option>
+                <!-- Aggiungi altre opzioni -->
+            </select>
+        </section>
+        <section id="locali-list">
+            <h2>Locali</h2>
+            <ul id="locali">
+                <!-- I locali verranno caricati qui dinamicamente -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Elenco dei Locali</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const localiList = document.getElementById('locali');
+            const searchInput = document.getElementById('search');
+            const tipologiaFilter = document.getElementById('tipologia-filter');
+            const zonaFilter = document.getElementById('zona-filter');
 
+            // Dati dei locali (puoi sostituirli con i dati del tuo file Excel)
+            const localiData = [
+                {
+                    locale: "La Chiesetta",
+                    tipologia: "Aperitivo",
+                    cibo: "Taglieri",
+                    plus: "Location",
+                    zona: "Arco",
+                    check: ""
+                },
+                {
+                    locale: "La focacce ria",
+                    tipologia: "Aperitivo",
+                    cibo: "Aperitivo",
+                    plus: "",
+                    zona: "Cadorna",
+                    check: ""
+                },
+                {
+                    locale: "Foresta wood bar",
+                    tipologia: "Aperitivo",
+                    cibo: "Misto",
+                    plus: "All you can eat",
+                    zona: "Centro",
+                    check: ""
+                },
+                // Aggiungi altri locali qui
+            ];
+
+            // Funzione per visualizzare i locali
+            function displayLocali(locali) {
+                localiList.innerHTML = '';
+                locali.forEach(locale => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <h3>${locale.locale}</h3>
+                        <p><strong>Tipologia:</strong> ${locale.tipologia}</p>
+                        <p><strong>Cibo:</strong> ${locale.cibo}</p>
+                        <p><strong>Zona:</strong> ${locale.zona}</p>
+                        ${locale.plus ? `<p><strong>Plus:</strong> ${locale.plus}</p>` : ''}
+                    `;
+                    localiList.appendChild(li);
+                });
+            }
+
+            // Filtra i locali in base alla ricerca e ai filtri
+            function filterLocali() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const tipologia = tipologiaFilter.value;
+                const zona = zonaFilter.value;
+
+                const filtered = localiData.filter(locale => {
+                    return (locale.locale.toLowerCase().includes(searchTerm) || locale.zona.toLowerCase().includes(searchTerm)) &&
+                           (tipologia === 'all' || locale.tipologia === tipologia) &&
+                           (zona === 'all' || locale.zona === zona);
+                });
+
+                displayLocali(filtered);
+            }
+
+            // Mostra tutti i locali all'inizio
+            displayLocali(localiData);
+
+            // Aggiungi event listener per la ricerca e i filtri
+            searchInput.addEventListener('input', filterLocali);
+            tipologiaFilter.addEventListener('change', filterLocali);
+            zonaFilter.addEventListener('change', filterLocali);
+        });
+    </script>
 </body>
 </html>
-<!-- TODO 2: Add Your previous projects' HTML into the public folder --> 
-
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links -->
