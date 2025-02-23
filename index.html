@@ -40,6 +40,15 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        .locale-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .locale-info {
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -54,19 +63,134 @@
                 <option value="all">Tutte le Tipologie</option>
                 <option value="Aperitivo">Aperitivo</option>
                 <option value="Cena">Cena</option>
-                <!-- Aggiungi altre opzioni -->
+                <option value="Brunch">Brunch</option>
+                <option value="Colazione">Colazione</option>
+                <option value="Merenda">Merenda</option>
+                <option value="Cocktail Bar">Cocktail Bar</option>
             </select>
             <select id="zona-filter">
                 <option value="all">Tutte le Zone</option>
                 <option value="Arco">Arco</option>
                 <option value="Cadorna">Cadorna</option>
-                <!-- Aggiungi altre opzioni -->
+                <option value="Centro">Centro</option>
+                <option value="Navigli">Navigli</option>
+                <option value="Porta Romana">Porta Romana</option>
+                <option value="Brera">Brera</option>
+                <option value="Isola">Isola</option>
+                <option value="Porta Venezia">Porta Venezia</option>
+                <option value="Darsena">Darsena</option>
+                <option value="Crocetta">Crocetta</option>
+                <option value="Missori">Missori</option>
+                <option value="Ortica">Ortica</option>
+                <option value="San Babila">San Babila</option>
+                <option value="Garibaldi">Garibaldi</option>
+                <option value="Nolo">Nolo</option>
+                <option value="Repubblica">Repubblica</option>
+                <option value="China Town">China Town</option>
+                <option value="Porta Garibaldi">Porta Garibaldi</option>
+                <option value="Viale Bligny">Viale Bligny</option>
+                <option value="Corso di Porta Ticinese">Corso di Porta Ticinese</option>
+                <option value="Buenos Aires">Buenos Aires</option>
+                <option value="5 Giornate">5 Giornate</option>
+                <option value="Moscova">Moscova</option>
+                <option value="Montenapoleone">Montenapoleone</option>
+                <option value="Paderno Dugnano">Paderno Dugnano</option>
+                <option value="Lago di Lecco">Lago di Lecco</option>
+                <option value="Brianza">Brianza</option>
+                <option value="Baggio">Baggio</option>
+                <option value="Loreto-altri">Loreto-altri</option>
+                <option value="Farini">Farini</option>
+                <option value="De Angeli">De Angeli</option>
             </select>
         </section>
         <section id="locali-list">
             <h2>Locali</h2>
             <ul id="locali">
-                <!-- I locali verranno caricati qui dinamicamente -->
+                <!-- Locali inseriti qui -->
+                <li>
+                    <div class="locale-name">La Chiesetta</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Taglieri</p>
+                        <p><strong>Zona:</strong> Arco</p>
+                        <p><strong>Plus:</strong> Location</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">La focacce ria</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Aperitivo</p>
+                        <p><strong>Zona:</strong> Cadorna</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">Foresta wood bar</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Misto</p>
+                        <p><strong>Zona:</strong> Centro</p>
+                        <p><strong>Plus:</strong> All you can eat</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">Non la Solita vineria</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Vino e tagliere</p>
+                        <p><strong>Zona:</strong> Crocetta</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">Siciliamo</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Siciliano</p>
+                        <p><strong>Zona:</strong> Darsena</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">Bar senza nome</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Aperitivo</p>
+                        <p><strong>Zona:</strong> Gita fuori porta: Bologna</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">Levante</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Vino e tagliere</p>
+                        <p><strong>Zona:</strong> Isola</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">Zizania</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Drink particolari</p>
+                        <p><strong>Zona:</strong> Missori</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">La sala del vino</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo</p>
+                        <p><strong>Cibo:</strong> Vino e tagliere</p>
+                        <p><strong>Zona:</strong> Ortica</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="locale-name">Mi scusi</div>
+                    <div class="locale-info">
+                        <p><strong>Tipologia:</strong> Aperitivo/cena</p>
+                        <p><strong>Cibo:</strong> Pasta</p>
+                        <p><strong>Zona:</strong> Centrale-lsola-Brera-Navigli</p>
+                        <p><strong>CHECK:</strong> Approvato</p>
+                    </div>
+                </li>
+                <!-- Aggiungi altri locali qui -->
             </ul>
         </section>
     </main>
@@ -80,68 +204,28 @@
             const tipologiaFilter = document.getElementById('tipologia-filter');
             const zonaFilter = document.getElementById('zona-filter');
 
-            // Dati dei locali (puoi sostituirli con i dati del tuo file Excel)
-            const localiData = [
-                {
-                    locale: "La Chiesetta",
-                    tipologia: "Aperitivo",
-                    cibo: "Taglieri",
-                    plus: "Location",
-                    zona: "Arco",
-                    check: ""
-                },
-                {
-                    locale: "La focacce ria",
-                    tipologia: "Aperitivo",
-                    cibo: "Aperitivo",
-                    plus: "",
-                    zona: "Cadorna",
-                    check: ""
-                },
-                {
-                    locale: "Foresta wood bar",
-                    tipologia: "Aperitivo",
-                    cibo: "Misto",
-                    plus: "All you can eat",
-                    zona: "Centro",
-                    check: ""
-                },
-                // Aggiungi altri locali qui
-            ];
-
-            // Funzione per visualizzare i locali
-            function displayLocali(locali) {
-                localiList.innerHTML = '';
-                locali.forEach(locale => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                        <h3>${locale.locale}</h3>
-                        <p><strong>Tipologia:</strong> ${locale.tipologia}</p>
-                        <p><strong>Cibo:</strong> ${locale.cibo}</p>
-                        <p><strong>Zona:</strong> ${locale.zona}</p>
-                        ${locale.plus ? `<p><strong>Plus:</strong> ${locale.plus}</p>` : ''}
-                    `;
-                    localiList.appendChild(li);
-                });
-            }
-
-            // Filtra i locali in base alla ricerca e ai filtri
+            // Funzione per filtrare i locali
             function filterLocali() {
                 const searchTerm = searchInput.value.toLowerCase();
                 const tipologia = tipologiaFilter.value;
                 const zona = zonaFilter.value;
 
-                const filtered = localiData.filter(locale => {
-                    return (locale.locale.toLowerCase().includes(searchTerm) || locale.zona.toLowerCase().includes(searchTerm)) &&
-                           (tipologia === 'all' || locale.tipologia === tipologia) &&
-                           (zona === 'all' || locale.zona === zona);
+                Array.from(localiList.children).forEach(locale => {
+                    const nome = locale.querySelector('.locale-name').textContent.toLowerCase();
+                    const tipologiaLocale = locale.querySelector('.locale-info p:nth-child(1)').textContent.toLowerCase();
+                    const zonaLocale = locale.querySelector('.locale-info p:nth-child(3)').textContent.toLowerCase();
+
+                    const matchesSearch = nome.includes(searchTerm) || zonaLocale.includes(searchTerm);
+                    const matchesTipologia = tipologia === 'all' || tipologiaLocale.includes(tipologia.toLowerCase());
+                    const matchesZona = zona === 'all' || zonaLocale.includes(zona.toLowerCase());
+
+                    if (matchesSearch && matchesTipologia && matchesZona) {
+                        locale.style.display = 'block';
+                    } else {
+                        locale.style.display = 'none';
+                    }
                 });
-
-                displayLocali(filtered);
             }
-
-            // Mostra tutti i locali all'inizio
-            displayLocali(localiData);
 
             // Aggiungi event listener per la ricerca e i filtri
             searchInput.addEventListener('input', filterLocali);
